@@ -28,9 +28,6 @@ gem 'jbuilder', '~> 2.7'
 # Make errors look nicer
 gem 'better_errors', '~> 2.9', '>= 2.9.1'
 
-# Simple Form
-gem 'simple_form', '~> 5.1'
-
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 group :development, :test do
