@@ -15,10 +15,13 @@
       <%# </tr> %>
     <%# </thead> %>
 
+
+<%# Create a card instead %>
     <tbody>
       <% @posts.each do |post| %>
-        <tr class="post-card bg-dark">
-          <td scope="row"><%= post.title %></td>
+        <tr class="post-card bg-dark mt-2">
+          <%# <td scope="row"><%= post.title %>
+          <%# </td>  %>
           <td><%= post.content %></td>
           <td><%= link_to 'Show', post, class: "btn btn-secondary btn-sm" %></td>
         </tr>
@@ -32,7 +35,7 @@
 <%# <div class="d-flex justify-content-start ml-5">   %>
 <div class="d-flex justify-content-end mr-5">
 <%# <div class="d-flex justify-content-center">     %>
-  <%= link_to 'New Post', new_post_path, class: "btn btn-secondary" %>
+  <%= link_to 'Create a Post', new_post_path, class: "btn btn-secondary" %>
 </div>  
 
 
