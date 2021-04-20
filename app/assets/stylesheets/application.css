@@ -8,3 +8,10 @@
 .post-card:hover {
     transform: scale(1.1);
 } */
+  
+  .ftCol {
+    bottom: 0 !important;
+    background-color: #067182;
+    color: white;
+    text-align: center;
+  }
