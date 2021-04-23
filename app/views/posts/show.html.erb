@@ -2,14 +2,15 @@
   <h1 class="display-4 text-center"><%= @post.title %></h1>
 </div>
 
-<%# Need to have place for author %>
 <%# Place content in a card %>
+<div class="d-flex justify-content-end mr-5">
+  <p>Author: <%= @post.username %></p>
+</div>
+
 <h5 class="ml-5 mr-5 text-center">
   <%# <strong>Content:</strong> %>
-  <%# <%= @user.user_name%>
   <%= @post.content %>
 </h5>
-
 <br><br>
 
 <div class="d-flex flex-column"> 

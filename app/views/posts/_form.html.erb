@@ -27,7 +27,9 @@
       <%= form.number_field :user_id, id: :friend_user_id, value: current_user.id, class: "form-control", type: :hidden %>
     </div>
 
-    <%# <%= current_user.inspect %>
+    <div class="field form-group">
+      <%= form.text_field :username, value: current_user.username, class: "form-control", type: :hidden %>
+    </div>
 
   </div>
 
