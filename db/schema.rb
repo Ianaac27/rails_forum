@@ -10,15 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_23_200801) do
+ActiveRecord::Schema.define(version: 2021_04_23_213119) do
 
   create_table "comments", force: :cascade do |t|
-    # t.string "name"
+    t.string "name"
     t.text "body"
     t.integer "post_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.string "username"
     t.index ["post_id"], name: "index_comments_on_post_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+    t.index ["username"], name: "index_comments_on_username"
   end
 
   create_table "posts", force: :cascade do |t|

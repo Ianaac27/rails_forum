@@ -17,8 +17,10 @@
 <br>
     <%= render @post.comments %>
     <br>
+ <% if user_signed_in? %>   
     <h3>Add a Comment: </h3>
     <%= render "comments/form" %>
+<% end %>
 
 <div class="d-flex flex-column"> 
   <div class= "d-flex flex-row justify-content-end">

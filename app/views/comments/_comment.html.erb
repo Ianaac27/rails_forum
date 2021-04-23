@@ -1,4 +1,12 @@
 <%= comment.body %>
+<%= comment.username%>
+
 <p> <%= time_ago_in_words(comment.created_at) %> </p>
 
-<p> <%= link_to 'Delete', [comment.post,comment], method: :delete, data: {confirm: 'Are you sure?'} %></p>
+<% if user_signed_in? %>
+    <% if comment.username == current_user.username %>
+        <p> <%= link_to 'Delete', [comment.post,comment], method: :delete, data: {confirm: 'Are you sure?'} %></p>
+    <% else %>
+      <div></div>
+    <% end %>
+<% end %>

@@ -1,7 +1,10 @@
 class CommentsController < ApplicationController
+    before_action :authenticate_user!
+
     def create
         @post = Post.find(params[:post_id])
-        @comment = @post.comments.create(params[:comment].permit(:name, :body))
+        @comment = @post.comments.create(params[:comment].permit(:name, :body, :user_id, :username))
+        @comment.username = current_user.username
         redirect_to post_path(@post)
     end
 

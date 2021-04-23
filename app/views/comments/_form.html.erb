@@ -3,6 +3,12 @@
         <%= f.label :body %>
         <%= f.text_area :body %>
     </p>
+    <p>
+        <%= f.number_field :user_id, id: :comment_user_id, value: current_user.id, class: "form-control", type: :hidden %>
+    </p>
+    <p>
+        <%= f.text_field :username, value: current_user.username, class: "form-control"%>
+    </p>
     <br>
     <p>
         <%= f.submit %>
