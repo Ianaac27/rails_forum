@@ -13,6 +13,11 @@
 </h5>
 <br><br>
 
+<h2><%= @post.comments.count %> Comments</h2>
+    <%= render @post.comments %>
+    <h3>Add a Comment: </h3>
+    <%= render "comments/form" %>
+
 <div class="d-flex flex-column"> 
   <div class= "d-flex flex-row justify-content-end">
     <% if @post.user == current_user %>
