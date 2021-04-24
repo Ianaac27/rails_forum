@@ -5,6 +5,7 @@
 
 <% if user_signed_in? %>
     <% if comment.username == current_user.username %>
+        <p> <%= link_to "Edit", edit_post_comment_path(@post, comment), action: :update%></p>
         <p> <%= link_to 'Delete', [comment.post,comment], method: :delete, data: {confirm: 'Are you sure?'} %></p>
     <% else %>
       <div></div>
