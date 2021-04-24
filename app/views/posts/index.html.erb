@@ -12,7 +12,6 @@
       </tr>
     </thead>
 
-<%# Create a card instead %>
     <tbody>
       <% @posts.each do |post| %>
         <tr class="post-card mt-2">
@@ -27,9 +26,7 @@
 
 <br>
 
-<%# <div class="d-flex justify-content-start ml-5">   %>
 <div class="d-flex justify-content-end mr-5">
-<%# <div class="d-flex justify-content-center">     %>
   <%= link_to 'Create a Post', new_post_path, class: "btn btn-secondary" %>
 </div>  
 

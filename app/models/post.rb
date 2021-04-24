@@ -3,6 +3,6 @@ class Post < ApplicationRecord
     has_many :comments, dependent: :destroy
 
     def self.search(search)
-        where("content LIKE ?", "%#{search}%")
+        where("title LIKE ?", "%#{search}%")
     end
 end

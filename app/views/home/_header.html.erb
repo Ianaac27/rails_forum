@@ -28,7 +28,7 @@
 
   <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
     <div class="d-flex flex-row">
-      <%= text_field_tag :search, params[:search], placeholder: "Search Content", class: "form-control mr-1 w-75" %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search Subject", class: "form-control mr-1 w-75" %>
       <%= submit_tag "Search", class: "btn btn-secondary" %>
     </div>
   <% end %>

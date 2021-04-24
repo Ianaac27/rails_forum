@@ -2,37 +2,52 @@
   <h1 class="display-4 text-center"><%= @post.title %></h1>
 </div>
 
-<%# Place content in a card %>
-<div class="d-flex justify-content-end mr-5">
-  <p>Author: <%= @post.username %></p>
-</div>
+<%# Card content %>
 
-<h5 class="ml-5 mr-5 text-center">
-  <%# <strong>Content:</strong> %>
-  <%= @post.content %>
-</h5>
-<br><br>
-
-<h2><%= @post.comments.count %> Comments</h2>
-<br>
-    <%= render @post.comments %>
-    <br>
- <% if user_signed_in? %>   
-    <h3>Add a Comment: </h3>
-    <%= render "comments/form" %>
-<% end %>
-
-<div class="d-flex flex-column"> 
-  <div class= "d-flex flex-row justify-content-end">
-    <% if @post.user == current_user %>
-      <div>
-        <%= link_to 'Edit', edit_post_path(@post, @comment), class: "btn btn-secondary" %>
+<div class="card">
+  <div class="card-header d-flex justify-content-between">
+    <p>Posted: <%= time_ago_in_words(@post.created_at) %> </p>
+    <p>Author: <%= @post.username %></p>
+  </div>
+  <div class="card-body">
+    <p class="card-title"><%= @post.content %></p>
+    <div class="d-flex flex-column"> 
+      <div class= "d-flex flex-row justify-content-end">
+        <% if @post.user == current_user %>
+          <div>
+            <%= link_to 'Edit', edit_post_path(@post, @comment), class: "btn btn-secondary btn-sm" %>
+          </div>
+        <% else %>
+          <div></div>
+        <% end %>
+        <div class="ml-2"> 
+          <%= link_to 'Back', posts_path, class: "btn btn-dark btn-sm" %>
+        </div>
       </div>
-    <% else %>
-      <div></div>
-    <% end %>
-    <div class="ml-2"> 
-      <%= link_to 'Back', posts_path, class: "btn btn-dark" %>
     </div>
   </div>
 </div>
+
+<br><br>
+
+<%# Comment section %>
+
+<div class="card">
+  <div class="card-header d-flex justify-content-start">
+    <h5><%= @post.comments.count %> Comments</h5>
+  </div>
+</div>
+
+    <%= render @post.comments %>
+    <br>
+
+<% if user_signed_in? %>
+<div class="card">
+  <div class="card-header d-flex justify-content-start">
+    <h5>Add a Comment</h5>
+  </div>
+  <div class="card-body">
+    <%= render "comments/form" %>
+  </div>
+</div>   
+<% end %>
