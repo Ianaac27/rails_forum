@@ -1,17 +1,9 @@
- /* .post-card {
-    box-shadow: 3px 8px 17px black;
-     transition:
-        transform 750ms cubic-bezier(.5, 0, .5, 1),
-        opacity 250ms linear;
-    }
-
-.post-card:hover {
-    transform: scale(1.1);
-} */
+html,body{
+  height: 100%
+}
   
-  .ftCol {
-    bottom: 0 !important;
-    background-color: #067182;
-    color: white;
-    text-align: center;
-  }
+.footer {
+  background-color: #17a2b8;
+  color: white;
+  text-align: center;
+}
