@@ -2,6 +2,11 @@
   <h1 class="display-4 text-center">Posts</h1>
 </div>
 
+<%= form_tag(posts_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+  <%= submit_tag "Search" %>
+<% end %>
+
 <div class="d-flex justify-content-center">
   <table class="table table-dark table-hover w-50">
     <thead>
