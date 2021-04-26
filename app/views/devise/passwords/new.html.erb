@@ -15,10 +15,11 @@
 <br>
 
   <div class= "d-flex flex-row justify-content-end">
+    <%= render "devise/shared/links" %>
     <div class="actions">
-      <%= f.submit "Send me reset password instructions", class: "btn btn-secondary"  %>
+      <%= f.submit "Send instructions", class: "btn btn-dark ml-2"  %>
     </div>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+
