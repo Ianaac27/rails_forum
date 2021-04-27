@@ -2,6 +2,10 @@
     <div> 
         <%= f.text_area :body, placeholder: "Update comment here...",  rows: '5', class: "form-control" %>
     </div>
+     <div class="field form-group">
+      <%= f.label :image %><br>
+      <%= f.file_field :image %>
+    </div>
     <p>
         <%= f.number_field :user_id, id: :comment_user_id, value: current_user.id, class: "form-control", type: :hidden %>
     </p>
@@ -12,6 +16,7 @@
     <div class= "d-flex flex-row justify-content-end">
         <div>
             <%= f.submit class: "btn btn-dark" %>
+            <% @comment.image.purge %>
         </div>
         <div class="ml-2"> 
             <%= link_to 'Delete', [@comment.post,@comment], method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger" %>
