@@ -27,7 +27,7 @@
       <%= form.label :image %><br>
       <%= form.file_field :image %>
     </div>
-
+ 
     <div class="field form-group">
       <%= form.number_field :user_id, id: :post_user_id, value: current_user.id, class: "form-control", type: :hidden %>
     </div>
@@ -40,6 +40,7 @@
 <div class= "d-flex flex-row justify-content-end mr-5">
   <div class="actions">
     <%= form.submit class: "btn btn-secondary" %>
+    <% @post.image.purge%>
   </div>
 </div>
 <% end %>
